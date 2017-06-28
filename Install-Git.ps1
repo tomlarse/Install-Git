@@ -1,6 +1,41 @@
-<#
+
+<#PSScriptInfo
+
+.VERSION 1.0
+
+.GUID 799d13d4-1b5b-419e-aed5-78f839d930d3
+
+.AUTHOR Tom-Inge Larsen
+
+.COMPANYNAME 
+
+.COPYRIGHT (c) Tom-Inge Larsen
+
+.TAGS install git installer
+
+.LICENSEURI 
+
+.PROJECTURI https://github.com/tomlarse/Install-Git
+
+.ICONURI 
+
+.EXTERNALMODULEDEPENDENCIES 
+
+.REQUIREDSCRIPTS 
+
+.EXTERNALSCRIPTDEPENDENCIES 
+
+.RELEASENOTES
+    Initial release.
+
+#>
+
+<# 
+
 .SYNOPSIS
-    Installs or updates git for windows
+    Installs or updates git for windows.
+.DESCRIPTION
+    Borrowed heavily from https://github.com/PowerShell/vscode-powershell/blob/develop/scripts/Install-VSCode.ps1. Sourcecode available at https://github.com/tomlarse/Install-Git
 .EXAMPLE
     Install-Git.ps1
 .NOTES
@@ -22,6 +57,7 @@
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     SOFTWARE.
 #>
+Param()
 if (!($IsLinux -or $IsOSX)) {
 
     $gitExePath = "C:\Program Files\Git\bin\git.exe"
