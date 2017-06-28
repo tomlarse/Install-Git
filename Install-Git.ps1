@@ -120,6 +120,3 @@ if (!($IsLinux -or $IsOSX)) {
 else {
     Write-Error "This script is currently only supported on the Windows operating system."
 }
-
-$s = get-process ssh-agent -ErrorAction SilentlyContinue
-if ($s) {$true}
