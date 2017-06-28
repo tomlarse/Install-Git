@@ -1,0 +1,1 @@
+#Script that installs git on windows. Borrowed heavily from https://github.com/PowerShell/vscode-powershell/blob/develop/scripts/Install-VSCode.ps1
