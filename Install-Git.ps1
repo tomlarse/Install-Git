@@ -63,7 +63,7 @@ if (!($IsLinux -or $IsOSX)) {
     $gitExePath = "C:\Program Files\Git\bin\git.exe"
 
     foreach ($asset in (Invoke-RestMethod https://api.github.com/repos/git-for-windows/git/releases/latest).assets) {
-        if ($asset.name -match 'Git-\d*\.\d*\.\d*-64-bit\.exe') {
+        if ($asset.name -match 'Git-\d*\.\d*\.\d*.\d*-64-bit\.exe') {
             $dlurl = $asset.browser_download_url
             $newver = $asset.name
         }
