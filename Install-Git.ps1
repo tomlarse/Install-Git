@@ -1,7 +1,7 @@
 
 <#PSScriptInfo
 
-.VERSION 1.0.3
+.VERSION 1.0.4
 
 .GUID 799d13d4-1b5b-419e-aed5-78f839d930d3
 
@@ -26,7 +26,8 @@
 .EXTERNALSCRIPTDEPENDENCIES 
 
 .RELEASENOTES
-    1.0.3 TLS 1.2 fix
+    1.0.4 Added example to description
+    1.0.3 TLS 1.2 fix, thanks jmangan68!
     1.0.2 Update to accomodate new git version patterns
     1.0.0 Initial release.
 
@@ -38,6 +39,7 @@
     Installs or updates git for windows.
 .DESCRIPTION
     Borrowed heavily from https://github.com/PowerShell/vscode-powershell/blob/develop/scripts/Install-VSCode.ps1. Sourcecode available at https://github.com/tomlarse/Install-Git
+    Install and run with Install-Script Install-Git; Install-Git.ps1
 .EXAMPLE
     Install-Git.ps1
 .NOTES
