@@ -1,7 +1,7 @@
 
 <#PSScriptInfo
 
-.VERSION 1.0.2
+.VERSION 1.0.3
 
 .GUID 799d13d4-1b5b-419e-aed5-78f839d930d3
 
@@ -26,6 +26,7 @@
 .EXTERNALSCRIPTDEPENDENCIES 
 
 .RELEASENOTES
+    1.0.3 TLS 1.2 fix
     1.0.2 Update to accomodate new git version patterns
     1.0.0 Initial release.
 
