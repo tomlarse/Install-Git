@@ -41,24 +41,9 @@ function Resolve-Module {
 # Grab nuget bits, install modules, set build variables, start build.
 Get-PackageProvider -Name NuGet -ForceBootstrap | Out-Null
 
-#workaround for nuget issue on PS6. Ensures only deployment to appveyor in ps5
-If ($PSVersionTable.PSVersion.Major -eq 5) {
-    Resolve-Module "PSDeploy", "BuildHelpers"
+Resolve-Module "Psake", "PSDeploy", "Pester", "BuildHelpers"
 
-    Set-BuildEnvironment
+Set-BuildEnvironment
 
-    $Params = @{
-        Path    = $ENV:BHProjectPath
-        Force   = $true
-        Recurse = $false # We keep psdeploy artifacts, avoid deploying those : )
-    }
-    Invoke-PSDeploy @Verbose @Params
-}
-else {
-    Resolve-Module "Psake", "PSDeploy", "Pester", "BuildHelpers"
-
-    Set-BuildEnvironment
-
-    Invoke-psake .\psake.ps1
-    exit ( [int]( -not $psake.build_success ) )
-}
+Invoke-psake .\psake.ps1
+exit ( [int]( -not $psake.build_success ) )
