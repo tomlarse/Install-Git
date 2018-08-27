@@ -13,7 +13,7 @@
 
 .TAGS install git installer
 
-.LICENSEURI 
+.LICENSEURI https://github.com/tomlarse/Install-Git/blob/master/LICENSE
 
 .PROJECTURI https://github.com/tomlarse/Install-Git
 
@@ -26,6 +26,7 @@
 .EXTERNALSCRIPTDEPENDENCIES 
 
 .RELEASENOTES
+    1.0.5 Added separate License file
     1.0.4 Added example to description
     1.0.3 TLS 1.2 fix, thanks jmangan68!
     1.0.2 Update to accomodate new git version patterns
