@@ -57,10 +57,19 @@ Task Test -Depends Init {
 Task Deploy -Depends Test {
     $lines
 
-    $Params = @{
-        Path    = $ProjectRoot
-        Force   = $true
-        Recurse = $false # We keep psdeploy artifacts, avoid deploying those : )
+    if (
+        $env:BHProjectName -and $env:BHProjectName.Count -eq 1 -and
+        $env:BHBuildSystem -ne 'Unknown' -and
+        $env:BHBranchName -eq "master" -and
+        $env:BHCommitMessage -match '!deploy'
+    ) {
+        Publish-Script "$($env:BHProjectPath)\Install-Git\Install-Git.ps1" -NuGetApiKey $ENV:NugetApiKey 
     }
-    Invoke-PSDeploy @Verbose @Params
+    else {
+        "Skipping deployment: To deploy, ensure that...`n" +
+        "`t* You are in a known build system (Current: $ENV:BHBuildSystem)`n" +
+        "`t* You are committing to the master branch (Current: $ENV:BHBranchName) `n" +
+        "`t* Your commit message includes !deploy (Current: $ENV:BHCommitMessage)" |
+            Write-Host
+    }
 }
