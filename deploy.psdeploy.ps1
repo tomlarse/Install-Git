@@ -8,8 +8,8 @@ if (
     $PSVersionTable.PSVersion.Major -ge 6 -and
     $env:BHCommitMessage -match '!deploy'
 ) {
-    Deploy Module {
-        By PSGalleryModule {
+    Deploy Script {
+        By PSGalleryScript {
             FromSource $ENV:BHPSModulePath
             To PSGallery
             WithOptions @{

@@ -1,15 +1,14 @@
-$ModuleFileName = 'Install-Git.ps1'
-$ModuleFilePath = "$PSScriptRoot\..\Install-Git\$ModuleManifestName"
+$ScriptFileName = 'Install-Git.ps1'
+$ScriptFilePath = "$PSScriptRoot\..\Install-Git\$ModuleManifestName"
 
 Describe 'File Tests' {
     It 'Passes Test-ScriptFileInfo' {
-        Test-ScriptFileInfo -Path $ModuleManifestPath | Should Not BeNullOrEmpty
+        Test-ScriptFileInfo -Path $ScriptFilePath | Should Not BeNullOrEmpty
         $? | Should Be $true
     }
 }
 
-. $ModuleFilePath
-Install-Git
+$ScriptFilePath
 
 # reload the PATH
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
