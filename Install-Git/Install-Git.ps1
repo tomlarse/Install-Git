@@ -44,6 +44,7 @@
     Install-Git.ps1
 .NOTES
     This script is licensed under the MIT License:
+    Copyright (c) Tom-Inge Larsen
     Copyright (c) Microsoft Corporation.
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
