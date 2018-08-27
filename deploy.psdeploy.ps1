@@ -9,7 +9,7 @@ if (
 ) {
     Deploy Script {
         By PSGalleryScript {
-            FromSource "$($ENV:BHProjectPath)\Install-Git"
+            FromSource "$($ENV:BHProjectPath)\Install-Git\Install-Git.ps1"
             To PSGallery
             WithOptions @{
                 ApiKey = $ENV:NugetApiKey
