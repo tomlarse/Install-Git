@@ -63,7 +63,7 @@ Task Deploy -Depends Test {
         $env:BHBranchName -eq "master" -and
         $env:BHCommitMessage -match '!deploy'
     ) {
-        Publish-Script "$($env:BHProjectPath)\Install-Git\Install-Git.ps1" -NuGetApiKey $ENV:NugetApiKey 
+        Publish-Script -Path "$($env:BHProjectPath)\Install-Git\Install-Git.ps1" -NuGetApiKey $ENV:NugetApiKey 
     }
     else {
         "Skipping deployment: To deploy, ensure that...`n" +
