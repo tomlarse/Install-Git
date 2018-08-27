@@ -1,5 +1,5 @@
 $ScriptFileName = 'Install-Git.ps1'
-$ScriptFilePath = "$($env:BHProjectPath)\Install-Git\$ModuleManifestName"
+$ScriptFilePath = "$($env:BHProjectPath)\Install-Git\$ScriptFileName"
 
 Describe 'File Tests' {
     It 'Passes Test-ScriptFileInfo' {
